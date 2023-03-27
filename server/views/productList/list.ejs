@@ -1,0 +1,172 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+
+<!-- include header with options in main page -->
+<%- include ('../partials/header.ejs') %> 
+
+ <!-- add navigation bar in header -->
+<%- include ('../partials/main_nav.ejs') %> 
+
+
+<!-- Hiome page with image and name -->
+
+
+    <main class = "container">
+        <div class = "row">
+            <div class = "offset-md-1 col md-10">
+                <h1>
+                <!-- Show All the Products -->
+                Show all the contacts
+                </h1>
+                <br>
+                <% if(typeof displayname == 'string' && displayname == "Admin") {%>
+                    <a href="/productList/add" class="btn btn-primary" role="button">
+                        <i class="fas fa-plus-circle"></i>
+                        <!-- Add a product -->
+                        Add a contact
+                    </a>
+                    <%}%>
+
+                <br>
+                <br>
+                <table class="table table-bordered table-striped table-hover" style="background-color:white;">
+                    <!-- header row -->
+                    <!-- <tr>
+                        <th class = "text-center col-2">
+                            Product Name
+                        </th>
+                        <th class = "text-center col-2">
+                            Brand Name
+                        </th>
+                        <th class = "text-center col-1">
+                            Color
+                        </th>
+                        <th class = "text-center col-1">
+                            Price
+                        </th>
+                        <% if(typeof displayname == 'string' && displayname == "Admin") {%>
+                            <th class = "text-center col-1">
+                                Edit
+                            </th>
+                            <th class = "text-center col-1">
+                                Delete
+                            </th>
+                            <%}%>
+                        
+                    </tr> -->
+
+
+                    <tr>
+                        <th class = "text-center col-2">
+                            Person Name
+                        </th>
+                        <th class = "text-center col-2">
+                            contact Number
+                        </th>
+                        <th class = "text-center col-1">
+                            Email Id
+                        </th>
+                        <% if(typeof displayname == 'string' && displayname == "Admin") {%>
+                            <th class = "text-center col-1">
+                                Edit
+                            </th>
+                            <th class = "text-center col-1">
+                                Delete
+                            </th>
+                            <%}%>
+                        
+                    </tr>
+
+                    
+                    <!-- <% for (let index = 0; index<ProductList.length; index ++) { console.log(ProductList[index]._id)%>
+                        <tr>
+                            <td class="text-center col-2">
+                                <%= ProductList[index].product_name %>
+                            </td>
+                        
+                        
+                            <td class="text-center col-2">
+                                <%= ProductList[index].brand_name %>
+                            </td>
+                        
+                            <td class="text-center col-1">
+                                <%= ProductList[index].color %>
+                            </td>
+                        
+                            <td class="text-center col-1">
+                                <%= ProductList[index].price %>
+                            </td>
+
+                            <% if(typeof displayname == 'string' && displayname == 'Admin') {%>
+                                <td class="text-center col-1"> 
+                                    <a href="/productList/edit/<%=ProductList[index]._id%>" class="btn btn-primary">
+                                        <i class="fas fa-pencil alt"></i>
+                                    </a>
+                                </td>
+    
+                                <td class="text-center col-1"> 
+                                    <a href="/productList/delete/<%=ProductList[index]._id%>" class="btn btn-danger">
+                                        <i class="fas fa-trash alt"></i>
+                                    </a>
+                                </td>
+    
+                                <%}%>
+                            
+                            
+                        </tr>
+                        
+                    <% } %>  -->
+
+            <!-- add sorting to display the contact list in alphabatical order  -->
+
+                    <% ProductList.sort((a, b) => (a.person_name || "").toString().localeCompare((b.person_name || "").toString())).forEach(person => { %>
+
+                        <tr>
+                            <td class="text-center col-2">
+                                <%= person.person_name %>
+                            </td>
+                        
+                        
+                            <td class="text-center col-2">
+                                <%= person.contact_number %>
+                            </td>
+                        
+                            <td class="text-center col-1">
+                                <%= person.email_id %>
+                            </td>
+                        
+
+                            <% if(typeof displayname == 'string' && displayname == 'Admin') {%>
+                                <td class="text-center col-1"> 
+                                    <a href="/productList/edit/<%=person._id%>" class="btn btn-primary">
+                                        <i class="fas fa-pencil alt"></i>
+                                    </a>
+                                </td>
+    
+                                <td class="text-center col-1"> 
+                                    <a href="/productList/delete/<%=person._id%>" class="btn btn-danger">
+                                        <i class="fas fa-trash alt"></i>
+                                    </a>
+                                </td>
+    
+                                <%}%>
+                        </tr>
+                        
+                <% }) %>
+
+                </table>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+      
+      </main>
+    
+
+    <%- include ('../partials/footer_nav.ejs') %>
+
+
+    <%- include ('../partials/footer.ejs') %>     

@@ -1,0 +1,116 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+
+<!-- include header with options in main page -->
+<%- include ('../partials/header.ejs') %> 
+
+ <!-- add navigation bar in header -->
+
+
+<!-- <div class="container">
+    <div class = "row">
+        <div class="offset-md-3 col-md-6">
+            <h1>Edit product</h1>
+            <form class ="form" method = "POST">
+                <div class = "form-group">
+                    <label for="nameTextField">Product Name</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="nameTextField" 
+                    placeholder="Enter the product name" 
+                    name="product_name" 
+                    value="<%=editProduct.product_name %>" 
+                    required>
+                </div>
+
+                <div class = "form-group">
+                    <label for="brandNameTextField">Brand Name</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="B=brandNameTextField" 
+                    placeholder="Enter the brand name" 
+                    name="brand_name" 
+                    value="<%=editProduct.brand_name %>"
+                    required>
+                </div>
+
+                <div class = "form-group">
+                    <label for="colorTextField">Product Color</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="colorTextField" 
+                    placeholder="Enter the color" 
+                    name="color"
+                    value="<%=editProduct.color %>"
+                    required>
+                </div>
+
+                <div class = "form-group">
+                    <label for="priceTextField">Product Price</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="priceTextField" 
+                    placeholder="Enter the product price" 
+                    name="price" 
+                    value="<%=editProduct.price %>"
+                    required>
+                </div>
+
+
+                <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
+                <a href="/productList" class="btn btn-warning"> <i class="fas fa-undo"></i>Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class = "row">
+        <div class="offset-md-3 col-md-6">
+            <h1>Edit product</h1>
+            <form class ="form" method = "POST">
+                <div class = "form-group">
+                    <label for="nameTextField">Person Name</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="person_name" 
+                    placeholder="Enter the person name" 
+                    name="person_name" 
+                    value="<%=editProduct.person_name %>" 
+                    required>
+                </div>
+
+                <div class = "form-group">
+                    <label for="contactTextField">Contact Number</label>
+                    <input type="number" 
+                    class="form-control" 
+                    id="contact_number" 
+                    placeholder="Enter the brand name" 
+                    name="contact_number" 
+                    value="<%=editProduct.contact_number %>"
+                    required>
+                </div>
+
+                <div class = "form-group">
+                    <label for="emailTextField">Product Color</label>
+                    <input type="email" 
+                    class="form-control" 
+                    id="email_id" 
+                    placeholder="Enter the email id" 
+                    name="email_id"
+                    value="<%=editProduct.email_id %>"
+                    required>
+                </div>
+
+
+                <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
+                <a href="/productList" class="btn btn-warning"> <i class="fas fa-undo"></i>Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+
+<!-- include header with options in main page -->
+<%- include ('partials/header.ejs') %> 
+
+ <!-- add navigation bar in header -->
+<%- include ('partials/main_nav.ejs') %> 
+
+<!-- redirect to the respective pages according to the title -->
+<% if (title == "Home") {%>
+    <%- include ('home.ejs') %>
+      <%} 
+      else if (title == "About") {%>
+    <%- include ('about.ejs') %>
+      <%} 
+      else if (title == "Services") {%>
+    <%- include ('services.ejs') %>
+      <%} 
+      else if (title == "Products") {%>
+    <%- include ('products.ejs') %>
+      <%} 
+      else if (title == "Contact") {%>
+    <%- include ('contact.ejs') %>
+      <%} 
+      
+      else {%> 
+        <%- include ('home.ejs') %>
+      <% } %>
+
+<%- include ('partials/footer_nav.ejs') %>
+
+
+<%- include ('partials/footer.ejs') %> 

@@ -1,0 +1,99 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+ 
+
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="content-left">
+                <h1 class="sub-title">About Me</h1>
+                <!-- <p><i class="fa-solid fa-paper-plane"></i> khanjandave56@gmail.com</p> -->
+
+                <!-- Define the email and password for manual contact -->
+
+
+                <p><i class="fa-solid fa-paper-plane"></i> kdave20@my.centennialcollege.ca</p>
+                <p><i class="fa-solid fa-square-phone"></i> +1 (437) 460 5060</p>
+
+                <!-- <div class="socail-media">
+                    <p>Social Media Accounts</p>
+                    <a href=""> <i class="fab fa-instagram"></i></a>
+                </div> -->
+
+                <!-- contact form where user can enter name and email with the message for further comunication which store in google sheet -->
+
+            </div>
+            <div class="content-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Enter Your Name" required>
+                    <input type="email" name="Email" placeholder="Enter Your Email" required>
+                    <textarea name="Message" rows="10" placeholder="Enter Your Message"></textarea>
+                    <button type="submit" class="btn btn2" onclick="fun()">Submit</button>
+                </form>
+                <span id="msg">Hello</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- script which add the form detail in the google sheet -->
+
+
+<!-- <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx3gahnui0_O33VWyXZF1exToRkC2mBE86FlmCnKVxbuQeJBN6QlzsPFbA5kET0aXyMpg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    form.addEventListener('submit', e => {
+  console.log(form.value);
+
+  let x = document.forms["Name"]["Email"].value;
+  if (x == "") {
+    
+        return false;
+  }else{
+    alert ("Message sebt successfully");
+    return true;
+  }
+      e.preventDefault()
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script> -->
+
+<!-- redirect to the home page after submit the details -->
+
+<script type="text/javascript">
+
+    function fun() {
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx3gahnui0_O33VWyXZF1exToRkC2mBE86FlmCnKVxbuQeJBN6QlzsPFbA5kET0aXyMpg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        // console.log("no data in form",form);
+        form.addEventListener('submit', e => {
+            // console.log("no data",e);
+
+            if (e == "") {
+                console.log("no data added");
+            } else {
+                document.location = '/';
+                alert("Message sent successfully");
+                e.preventDefault()
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            }
+         
+        });
+
+
+        // document.location='/';
+        // alert ("Message sebt successfully");
+    }
+</script>

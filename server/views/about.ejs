@@ -1,0 +1,72 @@
+<!-- 
+  Enrollment Number :- 301307330
+  Name :- Khanjan Dave 
+-->
+
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/aboutpic.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Helloo My name is Khanjan Dave I am a Mobile Application Developer</p>
+                <div class="tab-title">
+                    <p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-link " onclick="openTab('experience')">Experience</p>
+                    <p class="tab-link " onclick="openTab('MyCV')">My CV</p>
+                </div>
+
+                <!-- Define all the skiils with detail -->
+
+
+                <div class="tab-content active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Design wQeb and App Interfaces</li>
+                        <li><span>Web Developer</span><br>Web Development</li>
+                        <li><span>App Developer</span><br>Building Android and iOS Apps</li>
+                    </ul>
+                </div>
+
+
+                <!-- Define the Experience which I have in career -->
+
+                <div class="tab-content" id="experience">
+                    <ul>
+                        <li><span>2019-2020</span><br>Software tester at Smart Station</li>
+                        <li><span>Mobile App Developer</span><br>Flutter mobile application developer at Elsner Technology Pvt. Ltd.</li>
+                    </ul>
+                </div>
+
+                <!-- provide the CV in pdf file with download option. -->
+
+                <div class="tab-content" id="MyCV">
+                    <a href="images/KhanjanResumeCanada.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablink = document.getElementsByClassName("tab-link");
+    var tabcontent = document.getElementsByClassName("tab-content");
+
+function openTab(tabName){
+    for(tablinks of tablink){
+        tablinks.classList.remove("active-link");
+    }
+    for(tabcontents of tabcontent){
+        tabcontents.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    console.info(tabName);
+    document.getElementById(tabName).classList.add("active-tab");
+}
+
+</script>
