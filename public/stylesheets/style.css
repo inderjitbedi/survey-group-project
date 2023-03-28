@@ -223,8 +223,15 @@ nav ul li a:hover::after{
 .work-list{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap: 40px;
+    grid-gap: 30px;
     margin-top: 150px;
+
+}
+.work-list1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 30px;
+    margin-top: 50px;
 
 }
 
@@ -240,7 +247,7 @@ nav ul li a:hover::after{
     display: block;
     transition: transform 0.5s;
     background-size:contain;
-    height: 550px;
+    height: 400px;
     display: flex;
 }
 
@@ -360,3 +367,37 @@ form input, form textarea{
     margin-top: 20px;
     cursor: pointer;
 }*/
+
+
+
+input[type="text"] {
+    background-color: #000000; /* set background color to black */
+    color: #FFFFFF; /* set text color to white */
+    border: 1px solid #FFFFFF; /* set the border to white */
+    padding: 10px; /* add some padding for spacing */
+    
+  }
+input[type="email"] {
+    background-color: #000000; /* set background color to black */
+    color: #FFFFFF; /* set text color to white */
+    border: 1px solid #FFFFFF; /* set the border to white */
+    padding: 10px; /* add some padding for spacing */
+    /* background-clip: padding-box; */
+}
+textarea[type="text"] {
+    background-color: #000000; /* set background color to black */
+    color: #FFFFFF; /* set text color to white */
+    border: 1px solid #FFFFFF; /* set the border to white */
+    padding: 10px; /* add some padding for spacing */
+  }
+
+
+  
+/* input[type="text"]::placeholder { */
+    /* color: #FFFFFF;  */
+    /* set the placeholder color to white */
+/* } */
+/* textarea[type="text"]::placeholder { */
+    /* color: #FFFFFF;  */
+    /* set the placeholder color to white */
+/* } */

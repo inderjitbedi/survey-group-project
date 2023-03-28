@@ -63,38 +63,82 @@
 <div class="container">
     <div class = "row">
         <div class="offset-md-3 col-md-6">
-            <h1>Add new product</h1>
+            <h1 style="color: #31bebe;">Add new survey</h1>
+            <br>
+            <br>
+            
             <form class ="form" method = "POST">
                 <div class = "form-group">
                     <label for="nameTextField">Person Name</label>
                     <input type="text" 
                     class="form-control" 
-                    id="person_name" 
+                    id="personName" 
                     placeholder="Enter the person name" 
-                    name="person_name" required>
-                </div>
-
-                <div class = "form-group">
-                    <label for="contactTextField">Contact Number</label>
-                    <input type="number" 
-                    class="form-control" 
-                    id="contact_number" 
-                    placeholder="Enter the contact number" 
-                    name="contact_number" required>
+                    name="personName" required>
                 </div>
 
                 <div class = "form-group">
                     <label for="emailTextField">Email Id</label>
                     <input type="email" 
                     class="form-control" 
-                    id="email_id" 
+                    id="emailId" 
                     placeholder="Enter the email id" 
-                    name="email_id" required>
+                    name="emailId" required></input>
                 </div>
 
+                <div class = "form-group">
+                    <label for="currentStatusTextField">What is your current employment status?</label>
+                    <br>
+                    <textarea type="text" class="form control"
+                    id="currentStatus"
+                    placeholder = "Enter a brief description"
+                    name="currentStatus" required></textarea>
+                    </div>
 
-                <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
-                <a href="/productList" class="btn btn-warning"> <i class="fas fa-undo"></i>Cancel</a>
+                <div class = "form-group">
+                    <label for="unemplymentDurationTextField">How long have you been unemployed?</label>
+                    <br>
+                    <textarea type="text" class="form control"
+                    id="unemplymentDuration"
+                    placeholder = "Enter unemployement duration"
+                    name="unemplymentDuration" required></textarea>
+                    </div>
+
+                <div class = "form-group">
+                    <label for="reasonForUnemploymentTextField">What was the reason for your most recent job loss?</label>
+                    <br>
+                    <textarea type="text" class="form control"
+                    id="reasonForUnemployment"
+                    placeholder = "Enter unemployement reason"
+                    name="reasonForUnemployment" required></textarea>
+                    </div>
+
+                <div class = "form-group">
+                    <label for="mentalhealthOnUnemploymentTextField">How has your unemployment affected your mental health and overall well-being? 
+                        Have you been able to access any resources or support to help with these challenges?</label>
+                    <br>
+                    <textarea type="text" class="form control"
+                    id="mentalhealthOnUnemployment"
+                    placeholder = "Enter unemployement reason"
+                    name="mentalhealthOnUnemployment" required></textarea>
+                    </div>
+                
+
+                <div class = "form-group">
+                    <label for="localActionOnUnemploymentTextField">What do you think could be done at the local or national level 
+                        to help support individuals who are unemployed and seeking work?</label>
+                        <br>
+                    <textarea type="text" class="form control"
+                    id="localActionOnUnemployment"
+                    placeholder = "Enter unemployement reason"
+                    name="localActionOnUnemployment" required></textarea>
+                    </div>
+                
+
+                    <div style="text-align: center;">
+                <button class="btn btn-primary" type="submit" style=" margin-right: 10px;"><i class="fas fa-edit"></i>Submit</button>
+                <a href="/productList" class="btn btn-warning" style=" margin-left: 10px;"> <i class="fas fa-undo"></i>Cancel</a>
+                <div></div>
 
             </form>
         </div>
