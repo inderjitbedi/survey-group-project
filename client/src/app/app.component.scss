@@ -1,0 +1,24 @@
+.custom-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffffffa8;
+    z-index: 9999999999;
+  }
+.loader{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+  
+  .relative-div{
+    position: relative;
+
+  }
