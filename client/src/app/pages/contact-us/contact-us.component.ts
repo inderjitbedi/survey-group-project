@@ -11,7 +11,6 @@ export class ContactUsComponent extends BasePageComponent implements OnInit{
   constructor(route:ActivatedRoute) {
     super(route);
   }
-  override ngOnInit():void{
-    
+  override ngOnInit():void{ 
   }
 }

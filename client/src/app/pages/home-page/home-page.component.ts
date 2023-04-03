@@ -12,6 +12,5 @@ export class HomePageComponent extends BasePageComponent implements OnInit{
     super(route);
   }
   override ngOnInit():void{
-    
   }
 }
