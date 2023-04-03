@@ -19,4 +19,11 @@ const routes = [{ path: '**', component: LoginComponent }];
     MatFormFieldModule,FormsModule, ReactiveFormsModule
   ],
 })
-export class LoginModule {}
+export class LoginModule {
+  // messages: string[] = [];
+  // username: string = '';
+  // password: string = '';
+  // onSubmit() {
+  //   // do something when the form is submitted
+  // }
+}

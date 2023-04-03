@@ -1,0 +1,90 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#">COM229</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/home"><i class="fas fa-lg fa-laptop-house"></i>Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-circle-info"></i>About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/products"><i class="fa-brands fa-elementor"></i>Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/services"><i class="fa-solid fa-gears"></i>Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/contactus"><i class="fa-solid fa-mobile-retro"></i>Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/productList"><i class="fa-sharp fa-solid fa-list"></i>Product List</a>
+          </li>
+
+      </ul>
+
+  </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a routerLink="/"><img src="assets/images/logo.png" class="logo"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item" [ngClass]="{ 'active': title == 'Home' }">
+          <a class="nav-link" routerLink="/home">
+            <i class="fa-solid fa-house-chimney"></i> Home</a>
+        </li>
+
+        <li class="nav-item" [ngClass]="{ 'active': title == 'About' }">
+          <a class="nav-link" routerLink="/about">
+            <i class="fa-solid fa-circle-info"></i> About</a>
+        </li>
+
+        <li class="nav-item" [ngClass]="{ 'active': title == 'Contact' }">
+          <a class="nav-link" routerLink="/contactus">
+            <i class="fa-solid fa-mobile-retro"></i> Contact Us</a>
+        </li>
+
+        <li class="nav-item" *ngIf="displayname">
+          <a class="nav-link" [ngClass]="{ 'active': title == 'Product List' }" routerLink="/productList">
+            <i class="fa-sharp fa-solid fa-list"></i> Servey List</a>
+        </li>
+
+        <li class="navbar-text" *ngIf="displayname">
+          <i class="fas fa-lg fa-user"></i>
+          Welcome, {{ displayname }}
+        </li>
+
+        <li class="nav-item" *ngIf="displayname">
+          <a class="nav-link" routerLink="/logout">
+            <i class="fas fa-lg fa-sign-out alt"></i>
+            Logout
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="!displayname">
+          <a class="nav-link" routerLink="/login">
+            <i class="fas fa-lg fa-sign-in alt"></i>
+            Login
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

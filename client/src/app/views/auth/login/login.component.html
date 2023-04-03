@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
     <mat-card-title>Admin Login</mat-card-title>
     <mat-card-content>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -18,7 +18,7 @@
 
             <!-- <p *ngIf="error" class="error">
                 {{ error }}
-            </p> -->
+            </p> 
 
             <div class="button">
                 <button mat-raised-button  color="primary" [disabled]="loginForm.invalid ">Login</button>
@@ -26,4 +26,47 @@
 
         </form>
     </mat-card-content>
-</mat-card>
+</mat-card> -->
+
+<!-- 
+<div class="container">
+    <ng-container *ngIf="messages.length > 0">
+      <div class="alert alert-danger">
+        {{ messages }}
+      </div>
+    </ng-container>
+  
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
+        <h1>Please Login</h1>
+        <form (ngSubmit)="onSubmit()" autocomplete="off">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" 
+            class="form-control" 
+            name="username" 
+            placeholder="Enter username" 
+            id="username" 
+            [(ngModel)]="username" required autofocus>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" 
+            class="form-control" 
+            name="password" 
+            placeholder="Enter password" 
+            id="password" 
+            [(ngModel)]="password" required>
+            <a routerLink="/register">Register here</a>
+          </div>
+  
+          <div class="form-group text-right">
+            <button type="submit" class="btn btn-success">Login</button>
+            <button type="button" class="btn btn-warning" routerLink="/">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+  

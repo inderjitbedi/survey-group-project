@@ -18,6 +18,12 @@ import { Validator } from 'src/app/providers/Validator';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  messages: string[] = [];
+  username: string = '';
+  password: string = '';
+  onSubmit() {
+    // do something when the form is submitted
+  }
   loginForm: FormGroup;
   constructor(
     private errorHandlingService: ErrorHandlingService,
