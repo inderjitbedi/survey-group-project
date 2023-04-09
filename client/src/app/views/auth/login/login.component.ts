@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // do something when the form is submitted
   }
-  loginForm: FormGroup;
+  // loginForm: FormGroup;
   constructor(
     private errorHandlingService: ErrorHandlingService,
     private formBuilder: FormBuilder,
@@ -34,21 +34,21 @@ export class LoginComponent implements OnInit {
     public matcher: ErrorStateMatcherService,
     public getSetService: GetSetService
   ) {
-    this.loginForm = this.formBuilder.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(Validator.emailValidator.pattern),
-        ],
-      ],
-      password: ['', Validators.required],
-    });
+    // this.loginForm = this.formBuilder.group({
+    //   email: [
+    //     '',
+    //     [
+    //       Validators.required,
+    //       Validators.pattern(Validator.emailValidator.pattern),
+    //     ],
+    //   ],
+    //   password: ['', Validators.required],
+    // });
   }
   login(): void {
-    if (this.loginForm.valid) {
+    if (this.username && this.password) {
       this.apiService
-        .post(apiConstants.signin, this.loginForm.value)
+        .post(apiConstants.signin, { username: this.username, password: this.password })
         .subscribe({
           next: (data) => {
             if (data.statusCode === 201 || data.statusCode === 200) {
@@ -63,10 +63,11 @@ export class LoginComponent implements OnInit {
             }
           },
           error: (e) => {
-            this.errorHandlingService.handle(e)},
+            this.errorHandlingService.handle(e)
+          },
         });
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
