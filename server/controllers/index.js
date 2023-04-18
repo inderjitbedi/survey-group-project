@@ -50,20 +50,20 @@ module.exports.processLoginPage = (req, res, next) => {
 
       if (!user) {
         req.flash('loginMessage', 'Authenticate error');
-        // return res.redirect('/login');
-        return res.json({
-          statusCode: 500,
-          msg: 'Authenticate error',
-        });
+        return res.redirect('/login');
+        // return res.json({
+        //   statusCode: 500,
+        //   msg: 'Authenticate error',
+        // });
       }
       req.login(user, (err) => {
         //server error?
         if (err) {
-          // return next(err);
-          return res.json({
-            statusCode: 500,
-            msg: 'Authenticate error',
-          });
+          return next(err);
+          // return res.json({
+          //   statusCode: 500,
+          //   msg: 'Authenticate error',
+          // });
         }
         const payload = {
           id: user._id,
@@ -76,18 +76,18 @@ module.exports.processLoginPage = (req, res, next) => {
           expiresIn: 604800, // 1 week
         });
 
-        return res.json({
-          statusCode: 200,
-          msg: 'User Logged in Successfully!',
-          user: {
-            id: user._id,
-            displayName: user.displayName,
-            username: user.username,
-            email: user.email,
-          },
-          token: authToken,
-        });
-        // return res.redirect('/surveys');
+        // return res.json({
+        //   statusCode: 200,
+        //   msg: 'User Logged in Successfully!',
+        //   user: {
+        //     id: user._id,
+        //     displayName: user.displayName,
+        //     username: user.username,
+        //     email: user.email,
+        //   },
+        //   token: authToken,
+        // });
+        return res.redirect('/surveys');
       });
     },
   )(req, res, next);
@@ -124,19 +124,19 @@ module.exports.processRegisterPage = (req, res, next) => {
         );
         console.log('Error:User Already Exists');
       }
-      // return res.render('auth/register', {
-      //   title: 'Register',
-      //   messages: req.flash('registerMessage'),
-      //   displayname: req.user ? req.user.displayname : '',
-      // });
-      return res.json({ statusCode: 409, msg: 'Regsitration Error: User Already Exists!' });
+      return res.render('auth/register', {
+        title: 'Register',
+        messages: req.flash('registerMessage'),
+        displayname: req.user ? req.user.displayname : '',
+      });
+      // return res.json({ statusCode: 409, msg: 'Regsitration Error: User Already Exists!' });
     } else {
       // registration is successful if no error exists.
       //redirect the user and authenticate them
-      // return passport.authenticate('local')(req, res, () => {
-      //   res.redirect('/surveys');
-      // });
-      return res.json({ statusCode: 200, msg: 'User Registered Successfully!' });
+      return passport.authenticate('local')(req, res, () => {
+        res.redirect('/surveys');
+      });
+      // return res.json({ statusCode: 200, msg: 'User Registered Successfully!' });
     }
   });
 };
@@ -147,7 +147,7 @@ module.exports.performLogout = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    // res.redirect('/');
-    res.json({ statusCode: 200, msg: 'User Successfully Logged out!' });
+    res.redirect('/');
+    // res.json({ statusCode: 200, msg: 'User Successfully Logged out!' });
   });
 };
