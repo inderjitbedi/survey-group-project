@@ -1,4 +1,4 @@
-<div id="contact">
+<div class="contact__wrapper">
     <div class="container">
         <div class="row">
             <div class="content-left">
@@ -25,13 +25,12 @@
 
             </div>
             <div class="content-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Enter Your Name" required>
-                    <input type="email" name="Email" placeholder="Enter Your Email" required>
-                    <textarea type="text" name="Message" rows="10" placeholder="Enter Your Message"></textarea>
-                    <button type="submit" class="btn btn2" onclick="fun()">Submit</button>
+                <form name="form-group submit-to-google-sheet">
+                    <input class="form-control" type="text" name="Name" placeholder="Enter Your Name" required>
+                    <input class="form-control" type="email" name="Email" placeholder="Enter Your Email" required>
+                    <textarea class="form-control" type="text" name="Message" rows="10" placeholder="Enter Your Message"></textarea>
+                    <button class="form-control" type="submit" class="btn btn2" onclick="fun()">Submit</button>
                 </form>
-                <span id="msg">Hello</span>
             </div>
         </div>
     </div>
@@ -50,7 +49,7 @@
 
   let x = document.forms["Name"]["Email"].value;
   if (x == "") {
-    
+
         return false;
   }else{
     alert ("Message sebt successfully");
@@ -86,7 +85,7 @@
                     .then(response => console.log('Success!', response))
                     .catch(error => console.error('Error!', error.message))
             }
-         
+
         });
 
 

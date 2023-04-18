@@ -24,14 +24,14 @@ body{
     background-size:contain;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    background-position: right 30px center; 
+    background-position: right 30px center;
     padding-bottom: 50px;
     padding-right: 200px;
 
 }
 .container{
     padding: 10px 10%;
-    
+
 }
 
 
@@ -119,7 +119,7 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: #00FFFF;
-} 
+}
 
 .tab-title{
     display: flex;
@@ -151,7 +151,7 @@ nav ul li a:hover::after{
 
 .tab-content ul li{
     list-style: none;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 .tab-content ul li span{
@@ -320,12 +320,12 @@ nav ul li a:hover::after{
     font-size: 26px;
 }
 
-.socail-media{
+.social-media{
     margin-top: 30px;
 }
 
 
-.socail-media a{
+.social-media a{
     text-decoration: none;
     font-size: 30px;
     margin-right: 15px;
@@ -334,7 +334,7 @@ nav ul li a:hover::after{
     transition: transform 0.5s;
 }
 
-.socail-media a:hover{
+.social-media a:hover{
     color: #31bebe;
     transform: translateY(-5px);
 }
@@ -375,7 +375,7 @@ input[type="text"] {
     color: #FFFFFF; /* set text color to white */
     border: 1px solid #FFFFFF; /* set the border to white */
     padding: 10px; /* add some padding for spacing */
-    
+
   }
 input[type="email"] {
     background-color: #000000; /* set background color to black */
@@ -392,7 +392,7 @@ textarea[type="text"] {
   }
 
 
-  
+
 /* input[type="text"]::placeholder { */
     /* color: #FFFFFF;  */
     /* set the placeholder color to white */

@@ -1,1 +1,20 @@
+:host {
+    height: 64px;
+    min-height: 64px;
+}
 
+footer {
+    height: 64px;
+    min-height: 64px;
+}
+
+footer nav {
+    text-align: center;
+    background-color: #a6a6a6;
+    border-top: 3px solid #dbdbdb;
+}
+
+footer div {
+    font-size: 16px;
+    margin: 0 auto;
+}

@@ -1,32 +1,32 @@
-<mat-toolbar>
-    Admin Dashboard
-</mat-toolbar>
+<!--<mat-toolbar>-->
+<!--    Admin Dashboard-->
+<!--</mat-toolbar>-->
 
-<mat-sidenav-container>
-    <mat-sidenav class="mat-elevation-z8 sidenav">
-        <button mat-button class="menu-button active" routerLink="/dashboard/faq"  routerLinkActive="active"
-            [ngClass]="{'active': currentUrl?.indexOf('faq')>-1}">
-            <mat-icon>question_answer</mat-icon>
-            <span>FAQ</span>
-        </button>
-        <!-- <button mat-button class="menu-button" routerLink="/dashboard/reminder"  routerLinkActive="active"
-            [ngClass]="{'active': currentUrl.indexOf('reminder')>-1}">
-            <mat-icon>event</mat-icon>
-            <span>Reminder</span>
-        </button> -->
-        <div class="move-to-end of side nav">
-            <mat-divider></mat-divider>
-            <button mat-button class="menu-button" (click)="logout()">
-                <mat-icon>logout</mat-icon>
-                <span>Logout</span>
-            </button>
-    
-        </div>
-        
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="content mat-elevation-z8">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<!--<mat-sidenav-container>-->
+<!--    <mat-sidenav class="mat-elevation-z8 sidenav">-->
+<!--        <button mat-button class="menu-button active" routerLink="/dashboard/faq"  routerLinkActive="active"-->
+<!--            [ngClass]="{'active': currentUrl?.indexOf('faq')>-1}">-->
+<!--            <mat-icon>question_answer</mat-icon>-->
+<!--            <span>FAQ</span>-->
+<!--        </button>-->
+<!--        &lt;!&ndash; <button mat-button class="menu-button" routerLink="/dashboard/reminder"  routerLinkActive="active"-->
+<!--            [ngClass]="{'active': currentUrl.indexOf('reminder')>-1}">-->
+<!--            <mat-icon>event</mat-icon>-->
+<!--            <span>Reminder</span>-->
+<!--        </button> &ndash;&gt;-->
+<!--        <div class="move-to-end of side nav">-->
+<!--            <mat-divider></mat-divider>-->
+<!--            <button mat-button class="menu-button" (click)="logout()">-->
+<!--                <mat-icon>logout</mat-icon>-->
+<!--                <span>Logout</span>-->
+<!--            </button>-->
+<!--    -->
+<!--        </div>-->
+<!--        -->
+<!--    </mat-sidenav>-->
+<!--    <mat-sidenav-content>-->
+<!--        <div class="content mat-elevation-z8">-->
+<!--            <router-outlet></router-outlet>-->
+<!--        </div>-->
+<!--    </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->

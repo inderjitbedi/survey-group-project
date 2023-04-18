@@ -1,1 +1,35 @@
+:host {
+    flex: auto;
+}
 
+.app-home-page__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.app-home-page__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.app-home-page__main-image {
+    width: auto;
+    height: 300px;
+}
+
+.header-text{
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    line-height: 1em;
+}
+
+.header-text h1 span{
+    color: #764abc;
+}

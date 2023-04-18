@@ -57,6 +57,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
+import {NgOptimizedImage} from "@angular/common";
 // import { ProductStoreComponent } from './product-store/product-store.component';
 // import { ModelModule } from './Model/model.module';
 
@@ -80,14 +81,15 @@ import { RegisterComponent } from './views/auth/register/register.component';
     BrowserModule,
     AppRoutingModule,
     // ModelModule
-     MaterialModule,
+    MaterialModule,
     AppRoutingModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    LoaderModule
-        // MaterialModule,
+    LoaderModule,
+    NgOptimizedImage,
+    // MaterialModule,
     //     AppRoutingModule,
     //     BrowserModule,
     //     AppRoutingModule,
