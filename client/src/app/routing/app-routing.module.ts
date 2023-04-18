@@ -40,6 +40,7 @@ import { ContactUsComponent } from '../pages/contact-us/contact-us.component';
 import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { LoginComponent } from '../views/auth/login/login.component';
 import {RegisterComponent} from "../views/auth/register/register.component";
+import {DashboardComponent} from "../views/dashboard/dashboard.component";
 // import { ProductStoreComponent } from '../product-store/product-store.component';
 
 const routes: Routes = [
@@ -48,7 +49,7 @@ const routes: Routes = [
   { path: 'contactus', component: ContactUsComponent, data: { title: 'Contact' } },
   { path: 'register' ,component: RegisterComponent, data: { title : 'login'}},
   { path: 'login' ,component: LoginComponent, data: { title : 'login'}},
-  // { path: 'dashboard', component: ProductStoreComponent, data: { title: 'ProductList' } },
+  // { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
