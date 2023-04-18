@@ -56,6 +56,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
 import { LoginComponent } from './views/auth/login/login.component';
+import { RegisterComponent } from './views/auth/register/register.component';
 // import { ProductStoreComponent } from './product-store/product-store.component';
 // import { ModelModule } from './Model/model.module';
 
@@ -71,7 +72,8 @@ import { LoginComponent } from './views/auth/login/login.component';
     // ServicesComponent,
     ContactUsComponent,
     BasePageComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
     // ProductStoreComponent
   ],
   imports: [

@@ -14,7 +14,7 @@
 //     loadChildren: () => import('../views/dashboard/dashboard.module').then(m => m.DashboardModule),
 //     canActivate: [AuthGuard]
 //   },
-  
+
 //   {
 //     path: '**',
 //     redirectTo: 'login'
@@ -39,14 +39,16 @@ import { AboutComponent } from '../pages/about/about.component';
 import { ContactUsComponent } from '../pages/contact-us/contact-us.component';
 import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { LoginComponent } from '../views/auth/login/login.component';
+import {RegisterComponent} from "../views/auth/register/register.component";
 // import { ProductStoreComponent } from '../product-store/product-store.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent, data: { title: 'Home' } },
   { path: 'about', component: AboutComponent, data: { title: 'About' } },
   { path: 'contactus', component: ContactUsComponent, data: { title: 'Contact' } },
+  { path: 'register' ,component: RegisterComponent, data: { title : 'login'}},
   { path: 'login' ,component: LoginComponent, data: { title : 'login'}},
-  // { path: 'productList', component: ProductStoreComponent, data: { title: 'ProductList' } },
+  // { path: 'dashboard', component: ProductStoreComponent, data: { title: 'ProductList' } },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

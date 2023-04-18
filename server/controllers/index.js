@@ -1,5 +1,7 @@
 let express = require('express');
 let passport = require('passport');
+let jwt = require('jsonwebtoken');
+let DB = require('../config/db');
 let router = express.Router();
 
 //create user model intance
@@ -41,12 +43,13 @@ module.exports.displayLoginPage = (req, res, next) => {
 }
 
 module.exports.processLoginPage = (req,res,next) => {
-    passport.authenticate('local', (err,user,info) => {
-        console.log(user);
+    passport.authenticate('local', (err, user, info) => {
+        console.log('user: ', user);
+        console.log('info: ', info);
         //server error
         if (err) {
             return next(err);
-        } 
+        }
 
         if (!user) {
             req.flash('loginMessage','Authenticate error');
@@ -57,7 +60,30 @@ module.exports.processLoginPage = (req,res,next) => {
             if(err){
                 return next(err);
             }
-            return res.redirect('/productList');
+            const payload =
+              {
+                  id: user._id,
+                  displayName: user.displayName,
+                  username: user.username,
+                  email: user.email
+              }
+
+            const authToken = jwt.sign(payload, DB.secret, {
+                expiresIn: 604800 // 1 week
+            });
+
+            return res.json({
+                statusCode: 200,
+                msg: 'User Logged in Successfully!',
+                user: {
+                    id: user._id,
+                    displayName: user.displayName,
+                    username: user.username,
+                    email: user.email
+                },
+                token: authToken
+            });
+            // return res.redirect('/productList');
         });
     }
     )(req,res,next);
@@ -95,17 +121,19 @@ module.exports.processRegisterPage = (req,res,next) => {
                 );
                 console.log('Error:User Already Exists')
             }
-            return res.render('auth/register',{
-                title : 'Register',
-                messages : req.flash('registerMessage'),
-                displayname : req.user?req.user.displayname:''
-            });
+            // return res.render('auth/register',{
+            //     title : 'Register',
+            //     messages : req.flash('registerMessage'),
+            //     displayname : req.user?req.user.displayname:''
+            // });
+            return res.json({ statusCode: 409, msg: 'Regsitration Error: User Already Exists!'});
         } else {
             // registration is successful if no error exists.
             //redirect the user and authenticate them
-            return passport.authenticate('local')(req,res, () => {
-                res.redirect('/productList');
-            })
+            // return passport.authenticate('local')(req,res, () => {
+            //     res.redirect('/productList');
+            // })
+            return res.json({statusCode: 200, msg: 'User Registered Successfully!'});
         }
     })
     console.log(newUser);
@@ -116,8 +144,9 @@ module.exports.performLogout = (req, res, next) => {
     req.logout(function (err) {
         if(err){
             return next(err);
-            
+
         }
-        res.redirect('/');
+        // res.redirect('/');
+        res.json({statusCode: 200, msg: 'User Successfully Logged out!'});
     });
 }

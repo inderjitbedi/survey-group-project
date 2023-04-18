@@ -6,7 +6,8 @@ export namespace Constants {
   export const copyright = `Copyright © ${new Date().getFullYear()}`;
   export const rightReserved = 'All rights reserved.';
   export const Pages = {
-    LOGIN: 'login/',
+    HOME: '',
+    LOGIN: '/login',
     DASHBOARD:'/dashboard',
   };
   export const ErrorMessages = {

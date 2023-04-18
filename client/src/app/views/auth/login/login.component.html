@@ -14,7 +14,7 @@
                     <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Required</mat-error>
                 </mat-form-field>
 
-      
+
 
             <div class="button">
                 <button mat-raised-button  color="primary" [disabled]="loginForm.invalid ">Login</button>
@@ -23,7 +23,7 @@
         </form>
     </mat-card-content>
 </mat-card> -->
-     
+
 
 <div class="container">
     <ng-container *ngIf="messages.length > 0">
@@ -31,32 +31,32 @@
         {{ messages }}
       </div>
     </ng-container>
-  
+
     <div class="row">
       <div class="offset-md-4 col-md-4">
         <h1>Please Login</h1>
-        <form (ngSubmit)="onSubmit()" autocomplete="off">
+        <form (ngSubmit)="login()" autocomplete="off">
           <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" 
-            class="form-control" 
-            name="username" 
-            placeholder="Enter username" 
-            id="username" 
+            <input type="text"
+            class="form-control"
+            name="username"
+            placeholder="Enter username"
+            id="username"
             [(ngModel)]="username" required autofocus>
           </div>
-  
+
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" 
-            class="form-control" 
-            name="password" 
-            placeholder="Enter password" 
-            id="password" 
+            <input type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter password"
+            id="password"
             [(ngModel)]="password" required>
             <a routerLink="/register">Register here</a>
           </div>
-  
+
           <div class="form-group text-right">
             <button type="submit" class="btn btn-success">Login</button>
             <button type="button" class="btn btn-warning" routerLink="/">Cancel</button>

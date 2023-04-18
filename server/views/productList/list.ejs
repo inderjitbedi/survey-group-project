@@ -1,132 +1,129 @@
 <!-- include header with options in main page -->
-<%- include ('../partials/header.ejs') %> 
+<%- include ('../partials/header.ejs') %>
 
  <!-- add navigation bar in header -->
-<%- include ('../partials/main_nav.ejs') %> 
+<%- include ('../partials/main_nav.ejs') %>
 
 
 <!-- Hiome page with image and name -->
 
 
-    <main class = "container">
-        <div class = "row">
-            <div class = "offset-md-1 col md-10">
-                <h1 style="color: #31bebe;">
-                Show all the survey 
-                </h1>
-                <br>
-               
-                    <a href="/productList/add" class="btn btn-primary" role="button">
-                        <i class="fas fa-plus-circle"></i>
-                        <!-- Add a product -->
-                        Add a new survey
-                    </a>
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col md-10">
+            <h1 style="color: #31bebe;">
+                Show all the survey
+            </h1>
+            <br>
 
-                <br>
-                <br>
-                <table class="table table-bordered table-striped table-hover" style="background-color:white;">
-                    <!-- header row -->
+            <a href="/productList/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i>
+                <!-- Add a product -->
+                Add a new survey
+            </a>
 
+            <br>
+            <br>
+            <table class="table table-bordered table-striped table-hover" style="background-color:white;">
+                <!-- header row -->
+
+
+                <tr>
+                    <th class="text-center col-2">
+                        Person Name
+                    </th>
+                    <th class="text-center col-2">
+                        Email Id
+                    </th>
+                    <th class="text-center col-2">
+                        Current employment status
+                    </th>
+                    <th class="text-center col-2">
+                        Unemployment duration
+                    </th>
+                    <th class="text-center col-2">
+                        Reason for job loss
+                    </th>
+                    <th class="text-center col-2">
+                        Mental health effect
+                    </th>
+                    <th class="text-center col-2">
+                        Solutions
+                    </th>
+
+
+                    <th class="text-center col-1">
+                        Edit
+                    </th>
+                    <th class="text-center col-1">
+                        Delete
+                    </th>
+
+
+                </tr>
+
+
+                <!-- add sorting to display the contact list in alphabatical order  -->
+
+                <% ProductList.sort((a, b) => (a.personName || '').toString().localeCompare((b.personName || '').toString())).forEach(person => { %>
 
                     <tr>
-                        <th class = "text-center col-2">
-                            Person Name
-                        </th>
-                        <th class = "text-center col-2">
-                            Email Id
-                        </th>
-                        <th class = "text-center col-2">
-                            Current employment status
-                        </th>
-                        <th class = "text-center col-2">
-                            Unemployment duration
-                        </th>
-                        <th class = "text-center col-2">
-                            Reason for job loss
-                        </th>
-                        <th class = "text-center col-2">
-                            Mental health effect
-                        </th>
-                        <th class = "text-center col-2">
-                            Solutions
-                        </th>
-                        
-                        
-                            <th class = "text-center col-1">
-                                Edit
-                            </th>
-                            <th class = "text-center col-1">
-                                Delete
-                            </th>
-                            
-                        
+                        <td class="text-center col-2">
+                            <%= person.personName; %>
+                        </td>
+
+
+                        <td class="text-center col-2">
+                            <%= person.emailId; %>
+                        </td>
+
+                        <td class="text-center col-2">
+                            <%= person.currentStatus %>
+                        </td>
+
+                        <td class="text-center col-2">
+                            <%= person.unemploymentDuration; %>
+                        </td>
+
+                        <td class="text-center col-2">
+                            <%= person.reasonForUnemployment %>
+                        </td>
+
+                        <td class="text-center col-2">
+                            <%= person.mentalhealthOnUnemployment %>
+                        </td>
+
+                        <td class="text-center col-2">
+                            <%= person.localActionOnUnemployment %>
+                        </td>
+
+
+                        <td class="text-center col-1">
+                            <a href="/productList/edit/<%= person._id %>" class="btn btn-primary">
+                                <i class="fas fa-pencil alt"></i>
+                            </a>
+                        </td>
+
+                        <td class="text-center col-1">
+                            <a href="/productList/delete/<%= person._id %>" class="btn btn-danger">
+                                <i class="fas fa-trash alt"></i>
+                            </a>
+                        </td>
+
                     </tr>
-
-
-            <!-- add sorting to display the contact list in alphabatical order  -->
-
-                    <% ProductList.sort((a, b) => (a.personName || "").toString().localeCompare((b.personName || "").toString())).forEach(person => { %>
-
-                        <tr>
-                            <td class="text-center col-2">
-                                <%= person.personName %>
-                            </td>
-                        
-                        
-                            <td class="text-center col-2">
-                                <%= person.emailId %>
-                            </td>
-
-                            <td class="text-center col-2">
-                                <%= person.currentStatus %>
-                            </td>
-
-                            <td class="text-center col-2">
-                                <%= person.unemplymentDuration %>
-                            </td>
-
-                            <td class="text-center col-2">
-                                <%= person.reasonForUnemployment %>
-                            </td>
-
-                            <td class="text-center col-2">
-                                <%= person.mentalhealthOnUnemployment %>
-                            </td>
-
-                            <td class="text-center col-2">
-                                <%= person.localActionOnUnemployment %>
-                            </td>
-                        
-
-                            
-                                <td class="text-center col-1"> 
-                                    <a href="/productList/edit/<%=person._id%>" class="btn btn-primary">
-                                        <i class="fas fa-pencil alt"></i>
-                                    </a>
-                                </td>
-    
-                                <td class="text-center col-1"> 
-                                    <a href="/productList/delete/<%=person._id%>" class="btn btn-danger">
-                                        <i class="fas fa-trash alt"></i>
-                                    </a>
-                                </td>
-    
-                                
-                        </tr>
-                        
                 <% }) %>
 
-                </table>
-                <br>
-                <br>
-                <br>
-            </div>
+            </table>
+            <br>
+            <br>
+            <br>
         </div>
-      
-      </main>
-    
+    </div>
 
-    <%- include ('../partials/footer_nav.ejs') %>
+</main>
 
 
-    <%- include ('../partials/footer.ejs') %>     
+<%- include ('../partials/footer_nav.ejs') %>
+
+
+<%- include ('../partials/footer.ejs') %>

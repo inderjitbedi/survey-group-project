@@ -3,9 +3,10 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let cors = require('cors');
 
 
-// modules for authentication using passport 
+// modules for authentication using passport
 
 let session = require('express-session');
 let passport = require('passport');
@@ -15,7 +16,7 @@ let flash = require('connect-flash');
 
 
 //database setup using mongoose abd set db file
-let mongoose = require('mongoose'); 
+let mongoose = require('mongoose');
 let DB = require('./db');
 
 //point mongoose to the DB URI
@@ -41,19 +42,17 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 
-
-
-
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+app.use(cors())
 
 //setup express session
 
 app.use(session({
-  secret : "SomeSecret",
+  secret : DB.secret,
   saveUninitialized : false,
   resave : false
 }));

@@ -52,14 +52,14 @@ export class LoginComponent implements OnInit {
         .subscribe({
           next: (data) => {
             if (data.statusCode === 201 || data.statusCode === 200) {
-              localStorage.setItem('auth_token', data.response.auth_token);
+              localStorage.setItem('auth_token', data.token);
               // localStorage.setItem(
               //   'auth_result',
               //   JSON.stringify(data.response)
               // );
-              this.router.navigate([Constants.Pages.DASHBOARD]);
+              this.router.navigate([Constants.Pages.HOME]);
             } else {
-              this.errorHandlingService.handle(data);
+              this.errorHandlingService.handle(data.msg);
             }
           },
           error: (e) => {

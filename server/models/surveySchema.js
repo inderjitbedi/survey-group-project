@@ -5,11 +5,11 @@ let surveyModel = mongoose.Schema
         personName: String,
         currentStatus:String,
         emailId:String,
-        unEmploymentDuration: String,
+        unemploymentDuration: String,
         reasonForUnemployment:String,
         mentalHealthOnUnemployment:String,
         localActionOnUnemployment:String,
     },
-    
+
 );
 module.exports = mongoose.model('surveySchema', surveyModel);

@@ -1,94 +1,97 @@
 <!-- include header with options in main page -->
-<%- include ('../partials/header.ejs') %> 
+<%- include ('../partials/header.ejs') %>
 
- <!-- add navigation bar in header -->
+<!-- add navigation bar in header -->
 
 
 <div class="container">
-    <div class = "row">
+    <div class="row">
         <div class="offset-md-3 col-md-6">
             <h1 style="color: #31bebe;">Edit product</h1>
-            <form class ="form" method = "POST">
+            <form class="form" method="POST">
                 <br>
                 <br>
-                <div class = "form-group">
-                    <label for="nameTextField">Person Name</label>
-                    <input type="text" 
-                    class="form-control" 
-                    id="personName" 
-                    placeholder="Enter the person name" 
-                    value="<%=editProduct.personName %>"
-                    name="personName" required>
+                <div class="form-group">
+                    <label for="personName">Person Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="personName"
+                           placeholder="Enter the person name"
+                           value="<%= editProduct.personName %>"
+                           name="personName" required>
                 </div>
 
-                
-                <div class = "form-group">
-                    <label for="emailTextField">Email Id</label>
-                    <input type="email" 
-                    class="form-control" 
-                    id="emailId" 
-                    placeholder="Enter the email id" 
-                    value="<%=editProduct.emailId %>"
-                    name="emailId" required></input>
+                <div class="form-group">
+                    <label for="emailId">Email Id</label>
+                    <input type="email"
+                           class="form-control"
+                           id="emailId"
+                           placeholder="Enter the email id"
+                           value="<%= editProduct.emailId %>"
+                           name="emailId" required>
                 </div>
 
-                <div class = "form-group">
-                    <label for="currentStatusTextField">What is your current employment status?</label>
+                <div class="form-group">
+                    <label for="currentStatus">What is your current employment status?</label>
                     <br>
                     <textarea type="text" class="form control"
-                    id="currentStatus"
-                    placeholder = "Enter a brief description"
-                    value="<%=editProduct.currentStatus %>"
-                    name="currentStatus" required></textarea>
-                    </div>
+                              id="currentStatus"
+                              placeholder="Enter a brief description"
+                              value="<%= editProduct.currentStatus %>"
+                              name="currentStatus" required></textarea>
+                </div>
 
-                <div class = "form-group">
-                    <label for="unemplymentDurationTextField">How long have you been unemployed?</label>
+                <div class="form-group">
+                    <label for="unemploymentDuration">How long have you been unemployed?</label>
                     <br>
                     <textarea type="text" class="form control"
-                    id="unemplymentDuration"
-                    placeholder = "Enter unemployement duration"
-                    value="<%=editProduct.unemplymentDuration %>"
-                    name="unemplymentDuration" required></textarea>
-                    </div>
+                              id="unemploymentDuration"
+                              placeholder="Enter unemployement duration"
+                              value="<%= editProduct.unemploymentDuration %>"
+                              name="unemploymentDuration" required></textarea>
+                </div>
 
-                <div class = "form-group">
-                    <label for="reasonForUnemploymentTextField">What was the reason for your most recent job loss?</label>
+                <div class="form-group">
+                    <label for="reasonForUnemployment">What was the reason for your most recent job loss?</label>
                     <br>
                     <textarea type="text" class="form control"
-                    id="reasonForUnemployment"
-                    placeholder = "Enter unemployement reason"
-                    value="<%=editProduct.reasonForUnemployment %>"
-                    name="reasonForUnemployment" required></textarea>
-                    </div>
+                              id="reasonForUnemployment"
+                              placeholder="Enter unemployement reason"
+                              value="<%= editProduct.reasonForUnemployment %>"
+                              name="reasonForUnemployment" required></textarea>
+                </div>
 
-                <div class = "form-group">
-                    <label for="mentalhealthOnUnemploymentTextField">How has your unemployment affected your mental health and overall well-being? 
+                <div class="form-group">
+                    <label for="mentalhealthOnUnemployment">How has your unemployment affected your mental health and
+                        overall well-being?
                         Have you been able to access any resources or support to help with these challenges?</label>
                     <br>
                     <textarea type="text" class="form control"
-                    id="mentalhealthOnUnemployment"
-                    placeholder = "Enter unemployement reason"
-                    value="<%=editProduct.mentalhealthOnUnemployment %>"
-                    name="mentalhealthOnUnemployment" required></textarea>
-                    </div>
-                
+                              id="mentalhealthOnUnemployment"
+                              placeholder="Enter unemployement reason"
+                              value="<%= editProduct.mentalhealthOnUnemployment %>"
+                              name="mentalhealthOnUnemployment" required></textarea>
+                </div>
 
-                <div class = "form-group">
-                    <label for="localActionOnUnemploymentTextField">What do you think could be done at the local or national level 
+
+                <div class="form-group">
+                    <label for="localActionOnUnemployment">What do you think could be done at the local or national
+                        level
                         to help support individuals who are unemployed and seeking work?</label>
-                        <br>
+                    <br>
                     <textarea type="text" class="form control"
-                    id="localActionOnUnemployment"
-                    placeholder = "Enter unemployement reason"
-                    value="<%=editProduct.localActionOnUnemployment %>"
-                    name="localActionOnUnemployment" required></textarea>
-                    </div>
+                              id="localActionOnUnemployment"
+                              placeholder="Enter unemployement reason"
+                              value="<%= editProduct.localActionOnUnemployment %>"
+                              name="localActionOnUnemployment" required></textarea>
+                </div>
 
-
-                <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>Submit</button>
-                <a href="/productList" class="btn btn-warning"> <i class="fas fa-undo"></i>Cancel</a>
-
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i>Submit
+                </button>
+                <a href="/productList" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel
+                </a>
             </form>
         </div>
     </div>

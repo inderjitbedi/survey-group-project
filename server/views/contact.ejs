@@ -1,8 +1,8 @@
-<!-- 
+<!--
   Enrollment Number :- 301307330
-  Name :- Khanjan Dave 
+  Name :- Khanjan Dave
 -->
- 
+
 
 
 
@@ -41,7 +41,6 @@
                     <textarea type="text" name="Message" rows="10" placeholder="Enter Your Message"></textarea>
                     <button type="submit" class="btn btn2" onclick="fun()">Submit</button>
                 </form>
-                <span id="msg">Hello</span>
             </div>
         </div>
     </div>
@@ -60,7 +59,7 @@
 
   let x = document.forms["Name"]["Email"].value;
   if (x == "") {
-    
+
         return false;
   }else{
     alert ("Message sebt successfully");
@@ -96,7 +95,7 @@
                     .then(response => console.log('Success!', response))
                     .catch(error => console.error('Error!', error.message))
             }
-         
+
         });
 
 
