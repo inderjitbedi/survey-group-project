@@ -4,115 +4,88 @@
  <!-- add navigation bar in header -->
 <%- include ('../partials/main_nav.ejs') %>
 
-
-<!-- Hiome page with image and name -->
-
-
 <main class="container">
     <div class="row">
-        <div class="offset-md-1 col md-10">
+        <div class="col md-10">
             <h1 style="color: #31bebe;">
-                Show all the survey
+                Show all the survey responses
             </h1>
             <br>
-
-            <a href="/productList/add" class="btn btn-primary" role="button">
+            <a href="/surveys/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i>
-                <!-- Add a product -->
-                Add a new survey
+                <!-- Add survey response -->
+                Add new survey response
             </a>
-
             <br>
             <br>
             <table class="table table-bordered table-striped table-hover" style="background-color:white;">
                 <!-- header row -->
-
-
                 <tr>
-                    <th class="text-center col-2">
+                    <th class="text-center col-1">
                         Person Name
                     </th>
-                    <th class="text-center col-2">
+                    <th class="text-center col-1">
                         Email Id
                     </th>
-                    <th class="text-center col-2">
+                    <th class="text-center col-1">
                         Current employment status
                     </th>
-                    <th class="text-center col-2">
+                    <th class="text-center col-1">
                         Unemployment duration
                     </th>
-                    <th class="text-center col-2">
+                    <th class="text-center col-1">
                         Reason for job loss
                     </th>
                     <th class="text-center col-2">
                         Mental health effect
                     </th>
-                    <th class="text-center col-2">
+                    <th class="text-center col-3">
                         Solutions
                     </th>
-
-
                     <th class="text-center col-1">
                         Edit
                     </th>
                     <th class="text-center col-1">
                         Delete
                     </th>
-
-
                 </tr>
 
-
                 <!-- add sorting to display the contact list in alphabatical order  -->
-
-                <% ProductList.sort((a, b) => (a.personName || '').toString().localeCompare((b.personName || '').toString())).forEach(person => { %>
-
+                <% SurveyResponseList.sort((a, b) => (a.personName || '').toString().localeCompare((b.personName || '').toString())).forEach(response => { %>
                     <tr>
-                        <td class="text-center col-2">
-                            <%= person.personName; %>
-                        </td>
-
-
-                        <td class="text-center col-2">
-                            <%= person.emailId; %>
-                        </td>
-
-                        <td class="text-center col-2">
-                            <%= person.currentStatus %>
-                        </td>
-
-                        <td class="text-center col-2">
-                            <%= person.unemploymentDuration; %>
-                        </td>
-
-                        <td class="text-center col-2">
-                            <%= person.reasonForUnemployment %>
-                        </td>
-
-                        <td class="text-center col-2">
-                            <%= person.mentalhealthOnUnemployment %>
-                        </td>
-
-                        <td class="text-center col-2">
-                            <%= person.localActionOnUnemployment %>
-                        </td>
-
-
                         <td class="text-center col-1">
-                            <a href="/productList/edit/<%= person._id %>" class="btn btn-primary">
+                            <%= response.personName; %>
+                        </td>
+                        <td class="text-center col-1">
+                            <%= response.emailId; %>
+                        </td>
+                        <td class="text-center col-1">
+                            <%= response.currentStatus %>
+                        </td>
+                        <td class="text-center col-1">
+                            <%= response.unemploymentDuration; %>
+                        </td>
+                        <td class="text-center col-1">
+                            <%= response.reasonForUnemployment %>
+                        </td>
+                        <td class="text-center col-2">
+                            <%= response.mentalHealthOnUnemployment %>
+                        </td>
+                        <td class="text-center col-3">
+                            <%= response.localActionOnUnemployment %>
+                        </td>
+                        <td class="text-center col-1">
+                            <a href="/surveys/edit/<%= response._id %>" class="btn btn-primary">
                                 <i class="fas fa-pencil alt"></i>
                             </a>
                         </td>
-
                         <td class="text-center col-1">
-                            <a href="/productList/delete/<%= person._id %>" class="btn btn-danger">
+                            <a href="/surveys/delete/<%= response._id %>" class="btn btn-danger">
                                 <i class="fas fa-trash alt"></i>
                             </a>
                         </td>
-
                     </tr>
                 <% }) %>
-
             </table>
             <br>
             <br>

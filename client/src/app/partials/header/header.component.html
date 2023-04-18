@@ -26,7 +26,7 @@
             <a class="nav-link active" aria-current="page" href="/contactus"><i class="fa-solid fa-mobile-retro"></i>Contact us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/productList"><i class="fa-sharp fa-solid fa-list"></i>Product List</a>
+            <a class="nav-link active" aria-current="page" href="/surveys"><i class="fa-sharp fa-solid fa-list"></i>Survey List</a>
           </li>
 
       </ul>
@@ -61,8 +61,8 @@
         </li>
 
         <li class="nav-item" *ngIf="displayname">
-          <a class="nav-link" [ngClass]="{ 'active': title == 'Product List' }" routerLink="/productList">
-            <i class="fa-sharp fa-solid fa-list"></i> Servey List</a>
+          <a class="nav-link" [ngClass]="{ 'active': title == 'Survey List' }" routerLink="/surveys">
+            <i class="fa-sharp fa-solid fa-list"></i> Survey List</a>
         </li>
 
         <li class="navbar-text" *ngIf="displayname">
@@ -83,7 +83,7 @@
             Login
           </a>
         </li>
-        
+
       </ul>
     </div>
   </div>

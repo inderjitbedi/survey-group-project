@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
-            <h1 style="color: #31bebe;">Edit product</h1>
+            <h1 style="color: #31bebe;">Edit Response</h1>
             <form class="form" method="POST">
                 <br>
                 <br>
@@ -17,7 +17,7 @@
                            class="form-control"
                            id="personName"
                            placeholder="Enter the person name"
-                           value="<%= editProduct.personName %>"
+                           value="<%= surveyResponseToEdit.personName %>"
                            name="personName" required>
                 </div>
 
@@ -27,69 +27,68 @@
                            class="form-control"
                            id="emailId"
                            placeholder="Enter the email id"
-                           value="<%= editProduct.emailId %>"
+                           value="<%= surveyResponseToEdit.emailId %>"
                            name="emailId" required>
                 </div>
 
                 <div class="form-group">
                     <label for="currentStatus">What is your current employment status?</label>
                     <br>
-                    <textarea type="text" class="form control"
+                    <textarea type="text" class="form-control"
                               id="currentStatus"
                               placeholder="Enter a brief description"
-                              value="<%= editProduct.currentStatus %>"
-                              name="currentStatus" required></textarea>
+                              name="currentStatus"
+                              rows="2" required><%= surveyResponseToEdit.currentStatus %></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="unemploymentDuration">How long have you been unemployed?</label>
                     <br>
-                    <textarea type="text" class="form control"
+                    <textarea type="text" class="form-control"
                               id="unemploymentDuration"
                               placeholder="Enter unemployement duration"
-                              value="<%= editProduct.unemploymentDuration %>"
-                              name="unemploymentDuration" required></textarea>
+                              name="unemploymentDuration"
+                              rows="2" required><%= surveyResponseToEdit.unemploymentDuration %></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="reasonForUnemployment">What was the reason for your most recent job loss?</label>
                     <br>
-                    <textarea type="text" class="form control"
+                    <textarea type="text" class="form-control"
                               id="reasonForUnemployment"
                               placeholder="Enter unemployement reason"
-                              value="<%= editProduct.reasonForUnemployment %>"
-                              name="reasonForUnemployment" required></textarea>
+                              name="reasonForUnemployment"
+                              rows="5" required><%= surveyResponseToEdit.reasonForUnemployment %></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="mentalhealthOnUnemployment">How has your unemployment affected your mental health and
-                        overall well-being?
+                    <label for="mentalHealthOnUnemployment">How has your unemployment affected your mental health and
+                        overall well-being?<br>
                         Have you been able to access any resources or support to help with these challenges?</label>
                     <br>
-                    <textarea type="text" class="form control"
-                              id="mentalhealthOnUnemployment"
-                              placeholder="Enter unemployement reason"
-                              value="<%= editProduct.mentalhealthOnUnemployment %>"
-                              name="mentalhealthOnUnemployment" required></textarea>
+                    <textarea type="text" class="form-control"
+                              id="mentalHealthOnUnemployment"
+                              placeholder="Enter your current mental health details"
+                              name="mentalHealthOnUnemployment"
+                              rows="5" required><%= surveyResponseToEdit.mentalHealthOnUnemployment %></textarea>
                 </div>
 
 
                 <div class="form-group">
                     <label for="localActionOnUnemployment">What do you think could be done at the local or national
-                        level
-                        to help support individuals who are unemployed and seeking work?</label>
+                        level to help support individuals who are unemployed and seeking work?</label>
                     <br>
-                    <textarea type="text" class="form control"
+                    <textarea type="text" class="form-control"
                               id="localActionOnUnemployment"
-                              placeholder="Enter unemployement reason"
-                              value="<%= editProduct.localActionOnUnemployment %>"
-                              name="localActionOnUnemployment" required></textarea>
+                              placeholder="Enter suggested solutions demanded from local authorities"
+                              name="localActionOnUnemployment"
+                              rows="5" required><%= surveyResponseToEdit.localActionOnUnemployment %></textarea>
                 </div>
 
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i>Submit
                 </button>
-                <a href="/productList" class="btn btn-warning">
+                <a href="/surveys" class="btn btn-warning">
                     <i class="fas fa-undo"></i>Cancel
                 </a>
             </form>

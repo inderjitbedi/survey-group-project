@@ -7,9 +7,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 //Connect to products model
-
-let products = require('../models/products');
-let productListController = require('../controllers/productList');
+let surveyController = require('../controllers/survey');
 
 
 function requiredAuth(req, res, next)
@@ -23,36 +21,35 @@ function requiredAuth(req, res, next)
 
 //get route for the product list page -read operation
 
-// router.get('/', productListController.displayProductList);
+// router.get('/', surveyController.displayProductList);
 
-router.get('/',productListController.displayProductList);
-
+router.get('/', requiredAuth, surveyController.displaySurveyList);
 
 // Get route for displaying the Add page - Create operation
 
-router.get('/add', requiredAuth, productListController.displayProductListAdd);
+router.get('/add', requiredAuth, surveyController.displayAddSurveyResponse);
 
 
 // Post route for processing the Add page - Create operation
 
 
-router.post('/add', requiredAuth, productListController.addProductList);
+router.post('/add', requiredAuth, surveyController.addSurveyResponse);
 
 
 // Get route for displaying the Edit page - Update operation
 
 
-router.get('/edit/:id',requiredAuth, productListController.displayProductListEdit);
+router.get('/edit/:id',requiredAuth, surveyController.displayEditSurveyResponse);
 
 
 // Post route for processing the Add page - Update operation
 
 
-router.post('/edit/:id', requiredAuth, productListController.editProductList);
+router.post('/edit/:id', requiredAuth, surveyController.editSurveyResponse);
 
 // get route for deletion - Delete operation
 
-router.get('/delete/:id', requiredAuth, productListController.displayProductListDelete);
+router.get('/delete/:id', requiredAuth, surveyController.deleteSurveyResponse);
 
 
 module.exports = router;
